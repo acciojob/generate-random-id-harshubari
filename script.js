@@ -1,14 +1,17 @@
-let regexpr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 function makeid(l) {
-	let len = regexpr.length;
+	let len = characters.length;
 	let res = ' ';
 	for ( let i = 0; i < len; i++ ) {
-        res += characters.charAt(Math.floor(Math.random() * charactersLength));
+        res += characters.charAt(Math.floor(Math.random() * len));
     }
-	return res;
+
+	let newres = res.slice(0, l+1)
+	console.log(newres);
+	return newres;
 } 
 
 // Do not change the code below.
 
 const l = prompt("Enter a number.");
-alert(makeid(l)); 
+alert(makeid(parseInt(l))); 
